@@ -10,7 +10,7 @@ pipeline{
         choice(name: 'action', choices: 'create\ndelete', description: 'Choose create/Destroy')
         string(name: 'ImageName', description: "name of the docker build", defaultValue: 'javapp')
         string(name: 'ImageTag', description: "tag of the docker build", defaultValue: 'v1')
-        string(name: 'DockerHubUser', description: "name of the Application", defaultValue: 'praveensingam1994')
+        string(name: 'DockerHubUser', description: "name of the Application", defaultValue: 'ashis930')
     }
 
     stages{
@@ -44,7 +44,7 @@ pipeline{
                }
             }
         }
-        stage('Static code analysis: Sonarqube'){
+        stage('Static code analysis: Sonarqubenew'){
          when { expression {  params.action == 'create' } }
             steps{
                script{
@@ -54,7 +54,7 @@ pipeline{
                }
             }
        }
-       stage('Quality Gate Status Check : Sonarqube'){
+       stage('Quality Gate Status Check : Sonarqubenew'){
          when { expression {  params.action == 'create' } }
             steps{
                script{
